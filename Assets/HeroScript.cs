@@ -21,10 +21,10 @@ public class HeroScript : MonoBehaviour
     {
         if (Input.GetKeyDown("up"))
         {
-            if(onGround == true)
+            if (onGround == true)
             {
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
-                //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impluse); <-- needs fixing
+                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 onGround = false;
                 anim.SetTrigger("Jump");
             }
