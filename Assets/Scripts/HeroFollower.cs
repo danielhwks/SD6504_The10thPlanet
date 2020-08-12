@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class heroFollower : MonoBehaviour
+public class HeroFollower : MonoBehaviour
 {
     public GameObject heroCopy;
     // Start is called before the first frame update
