@@ -7,13 +7,17 @@ using UnityEngine;
 public class HeroScript : MonoBehaviour
 {
     public float jumpForce = 7.0f;
-    private bool onGround = false;
+    public GameObject gameObj;
     public int movementSpeed = 7;
     private Animator anim;
+    private bool onGround = false;
+    private RigidBody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = gameObj.GetComponent<RigidBody2D>();
+        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
@@ -28,8 +32,7 @@ public class HeroScript : MonoBehaviour
                 onGround = false;
                 anim.SetTrigger("Jump");
             }
-        }
-        
+        }        
     }
 
     void OnCollisionEnter2D(Collision2D hit)
