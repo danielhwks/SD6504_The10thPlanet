@@ -7,7 +7,6 @@ using UnityEngine;
 public class HeroScript : MonoBehaviour
 {
     public float jumpForce = 7.0f;
-    public GameObject gameObj;
     public int movementSpeed = 7;
     private Animator anim;
     private bool onGround = false;
@@ -16,7 +15,7 @@ public class HeroScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = gameObj.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
     }
 
@@ -35,10 +34,24 @@ public class HeroScript : MonoBehaviour
         }        
     }
 
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        if (Input.GetKey("left"))
+        {
+            rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+        }
+        if (Input.GetKey("right"))
+        {
+            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D hit)
     {
         onGround = true;
-        print("Hero has collided with ground");
+        rb.velocity = new Vector2(movementSpeed, 0);
+        print("Hero grounded");
     }
 
 }
