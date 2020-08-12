@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -11,6 +12,8 @@ public class HeroScript : MonoBehaviour
     private Animator anim;
     private bool onGround = false;
     private Rigidbody2D rb;
+    private float scale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +43,17 @@ public class HeroScript : MonoBehaviour
         if (Input.GetKey("left"))
         {
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+            scale = -1f;
+            GetComponent<Transform>().localScale.x = scale;
         }
         if (Input.GetKey("right"))
         {
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+            
+            Vector2 position = GetComponent<Transform>().position;
+            position.x = position.x - 0.1f;
+            scale = 1f;
+            GetComponent<Transform>().localScale = scale;
         }
     }
 
