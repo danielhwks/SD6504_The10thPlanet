@@ -11,12 +11,12 @@ public class HeroScript : MonoBehaviour
     public int movementSpeed = 7;
     private Animator anim;
     private bool onGround = false;
-    private RigidBody2D rb;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = gameObj.GetComponent<RigidBody2D>();
+        rb = gameObj.GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
     }
 
