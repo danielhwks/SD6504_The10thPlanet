@@ -43,8 +43,9 @@ public class HeroScript : MonoBehaviour
         if (Input.GetKey("left"))
         {
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
-            scale = -1f;
-            GetComponent<Transform>().localScale.x = scale;
+            Vector2 scale = GetComponent<Transform>().localScale;
+            scale.x = -1f;
+            GetComponent<Transform>().localScale = scale;
         }
         if (Input.GetKey("right"))
         {
@@ -52,7 +53,8 @@ public class HeroScript : MonoBehaviour
             
             Vector2 position = GetComponent<Transform>().position;
             position.x = position.x - 0.1f;
-            scale = 1f;
+            Vector2 scale = GetComponent<Transform>().localScale;
+            scale.x = 1f;
             GetComponent<Transform>().localScale = scale;
         }
     }
