@@ -13,6 +13,7 @@ public class HeroScript : MonoBehaviour
     private bool onGround = false;
     private Rigidbody2D rb;
     private float scale;
+    public static float heroHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,15 @@ public class HeroScript : MonoBehaviour
         onGround = true;
         rb.velocity = new Vector2(movementSpeed, 0);
         print("Hero grounded");
+    }
+
+    public void ImproveHealth(float healthAdd)
+    {
+        heroHealth += healthAdd;
+        if(heroHealth > 100f)
+        {
+            heroHealth = 100f;
+        }
     }
 
 }
