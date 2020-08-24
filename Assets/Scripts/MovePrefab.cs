@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovePrefab : MonoBehaviour
 {
     public GameObject prefabMove;
-    //public GameObject currentPrefab;
+    public GameObject currentPrefab;
     public float incrementX;
     public GameObject fuelCan;
     public GameObject laser;
@@ -25,10 +25,10 @@ public class MovePrefab : MonoBehaviour
     }
     void OnTriggerEnter2D()
     {
-        //Vector3 temp = currentPrefab.transform.position;
-        //temp.x = temp.x + incrementX;
-        Vector3 temp = prefabMove.transform.position;
+        Vector3 temp = currentPrefab.transform.position;
         temp.x = temp.x + incrementX;
+        //Vector3 temp = prefabMove.transform.position;
+        //temp.x = temp.x + incrementX;
         prefabMove.transform.position = temp;
 
         Random random = new Random();
