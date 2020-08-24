@@ -21,6 +21,7 @@ public class HeroScript : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        heroHealth = 100f;
     }
 
     // Update is called once per frame
@@ -33,7 +34,9 @@ public class HeroScript : MonoBehaviour
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 onGround = false;
-                anim.SetTrigger("Jump");
+                //anim.SetTrigger("Jump");
+                anim.SetInteger("Trans", 3);
+                
             }
         }        
     }
@@ -43,13 +46,16 @@ public class HeroScript : MonoBehaviour
         rb.velocity = new Vector2(0, rb.velocity.y);
         if (Input.GetKey("left"))
         {
+            anim.SetInteger("Trans", 1);
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
             Vector2 scale = GetComponent<Transform>().localScale;
             scale.x = -1f;
             GetComponent<Transform>().localScale = scale;
+
         }
         if (Input.GetKey("right"))
         {
+            anim.SetInteger("Trans", 2);
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
             
             Vector2 position = GetComponent<Transform>().position;
