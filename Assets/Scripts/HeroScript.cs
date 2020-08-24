@@ -46,7 +46,7 @@ public class HeroScript : MonoBehaviour
         rb.velocity = new Vector2(0, rb.velocity.y);
         if (Input.GetKey("left"))
         {
-            anim.SetInteger("Trans", 1);
+            anim.SetInteger("Trans", 2);
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
             Vector2 scale = GetComponent<Transform>().localScale;
             scale.x = -1f;
