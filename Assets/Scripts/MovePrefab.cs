@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovePrefab : MonoBehaviour
 {
     public GameObject prefabMove;
-    public GameObject currentPrefab;
+    //public GameObject currentPrefab;
     public float incrementX;
     public GameObject fuelCan;
     public GameObject laser;
