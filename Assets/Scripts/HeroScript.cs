@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -80,6 +81,17 @@ public class HeroScript : MonoBehaviour
         {
             heroHealth = 100f;
         }
+        print("Hero Health: " + heroHealth);
+    }
+
+    public void ReduceHealth(float healthRemove)
+    {
+        heroHealth -= healthRemove;
+        if(heroHealth > 0f)
+        {
+            heroHealth = 0f;
+        }
+        print("Hero Health: " + heroHealth);
     }
 
 }
