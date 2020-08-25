@@ -35,11 +35,13 @@ public class MovePrefab : MonoBehaviour
         int choice = Random.Range(0, 2);
         if (choice == 0)
         {
-            fuelCan.SetActive(true); laser.SetActive(false);
+            fuelCan.SetActive(true); 
+            laser.SetActive(false);
         }
         else if (choice == 1)
         {
-            fuelCan.SetActive(false); laser.SetActive(true);
+            fuelCan.SetActive(false); 
+            laser.SetActive(true);
         }
 
 

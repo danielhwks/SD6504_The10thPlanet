@@ -87,7 +87,7 @@ public class HeroScript : MonoBehaviour
     public void ReduceHealth(float healthRemove)
     {
         heroHealth -= healthRemove;
-        if(heroHealth > 0f)
+        if(heroHealth < 0f)
         {
             heroHealth = 0f;
         }
