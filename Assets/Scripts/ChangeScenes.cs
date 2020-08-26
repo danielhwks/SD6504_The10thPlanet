@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ChangeScenes : MonoBehaviour
 {
     public Button StartBtn;
+    private AssetBundle assetBundle;
     // Start is called before the first frame update
     void Start()
     {
