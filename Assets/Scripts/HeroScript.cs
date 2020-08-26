@@ -30,7 +30,6 @@ public class HeroScript : MonoBehaviour
     {
         if (Input.GetKeyDown("up"))
         {
-            //anim.SetInteger("Trans", 3);
             anim.Play("HeroJumping");
             if (onGround == true)
             {
@@ -92,6 +91,7 @@ public class HeroScript : MonoBehaviour
         if(heroHealth < 0f)
         {
             heroHealth = 0f;
+            anim.Play("HeroFall");
         }
         print("Hero Health: " + heroHealth);
     }
