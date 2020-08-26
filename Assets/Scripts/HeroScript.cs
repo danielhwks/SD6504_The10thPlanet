@@ -30,16 +30,15 @@ public class HeroScript : MonoBehaviour
     {
         if (Input.GetKeyDown("up"))
         {
+            //anim.SetInteger("Trans", 3);
+            anim.Play("HeroJumping");
             if (onGround == true)
             {
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 onGround = false;
-                //anim.SetTrigger("Jump");
-                anim.SetInteger("Trans", 3);
-                
             }
-        }        
+        }
     }
 
     void FixedUpdate()
@@ -52,7 +51,6 @@ public class HeroScript : MonoBehaviour
             Vector2 scale = GetComponent<Transform>().localScale;
             scale.x = -1f;
             GetComponent<Transform>().localScale = scale;
-
         }
         if (Input.GetKey("right"))
         {
@@ -64,6 +62,10 @@ public class HeroScript : MonoBehaviour
             Vector2 scale = GetComponent<Transform>().localScale;
             scale.x = 1f;
             GetComponent<Transform>().localScale = scale;
+        }
+        if (!Input.anyKey)
+        {
+            anim.SetInteger("Trans", 1);
         }
     }
 
