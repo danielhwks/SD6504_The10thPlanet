@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 796844439}
   - component: {fileID: 796844438}
   - component: {fileID: 796844437}
+  - component: {fileID: 796844441}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -579,6 +580,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &796844441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796844436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9570a59c48eb3fa4eb9827bacb552e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartBtn: {fileID: 1270374764}
+  HelpBtn: {fileID: 1565257954}
 --- !u!1 &903442037
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +849,6 @@ GameObject:
   - component: {fileID: 1270374766}
   - component: {fileID: 1270374765}
   - component: {fileID: 1270374764}
-  - component: {fileID: 1270374767}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -883,7 +897,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_HighlightedColor: {r: 0.9433962, g: 0.047620542, b: 0, a: 0}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
@@ -942,19 +956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270374762}
   m_CullTransparentMesh: 0
---- !u!114 &1270374767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270374762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9570a59c48eb3fa4eb9827bacb552e45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartBtn: {fileID: 1270374764}
 --- !u!1 &1539839417
 GameObject:
   m_ObjectHideFlags: 0
