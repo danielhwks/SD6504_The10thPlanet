@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class HeroScript : MonoBehaviour
@@ -66,6 +67,10 @@ public class HeroScript : MonoBehaviour
         {
             anim.SetInteger("Trans", 1);
         }
+
+        // Update UI
+        Text score = GameObject.Find("UIHeroScore").GetComponent<Text>();
+        score.text = GetScore().ToString();
     }
 
     void OnCollisionEnter2D(Collision2D hit)
