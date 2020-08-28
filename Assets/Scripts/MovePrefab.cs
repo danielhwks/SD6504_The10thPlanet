@@ -23,8 +23,10 @@ public class MovePrefab : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.gameObject.name != "Hero")
+            return;
         Vector3 temp = currentPrefab.transform.position;
         temp.x = temp.x + incrementX;
         //Vector3 temp = prefabMove.transform.position;
