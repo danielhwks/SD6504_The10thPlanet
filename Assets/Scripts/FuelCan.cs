@@ -20,7 +20,10 @@ public class FuelCan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        fuelCan.SetActive(false);
-        hero.ImproveHealth(10f);
+        if (collision.gameObject.name == "Hero")
+        {
+            fuelCan.SetActive(false);
+            hero.ImproveHealth(10f);
+        }
     }
 }
