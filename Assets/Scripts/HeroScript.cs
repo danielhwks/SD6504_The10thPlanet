@@ -96,4 +96,8 @@ public class HeroScript : MonoBehaviour
         print("Hero Health: " + heroHealth);
     }
 
+    public void GetScore()
+    {
+        return (int)transform.position.x;
+    }
 }
