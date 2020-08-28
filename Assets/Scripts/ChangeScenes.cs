@@ -21,12 +21,11 @@ public class ChangeScenes : MonoBehaviour
         {
             SceneManager.LoadScene("HelpScene");
         });
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

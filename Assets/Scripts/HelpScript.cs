@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class HelpScript : MonoBehaviour
 {
-    public Button HelpBtn;
+    public Button BackBtn;
     private AssetBundle assetBundle;
     // Start is called before the first frame update
     void Start()
     {
-        HelpBtn.onClick.AddListener(() =>
+        BackBtn.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("HomeScene");
+            SceneManager.LoadScene("HelpScene");
         });
     }
 
