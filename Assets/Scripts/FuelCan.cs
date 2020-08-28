@@ -24,6 +24,7 @@ public class FuelCan : MonoBehaviour
         {
             fuelCan.SetActive(false);
             hero.ImproveHealth(10f);
+            hero.SetFuelCanScore();
         }
     }
 }

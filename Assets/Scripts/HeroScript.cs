@@ -16,6 +16,7 @@ public class HeroScript : MonoBehaviour
     private Rigidbody2D rb;
     private float scale;
     public static float heroHealth;
+    public static int heroCollectionScore;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class HeroScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         heroHealth = 100f;
+        heroCollectionScore = 0;
     }
 
     // Update is called once per frame
@@ -71,6 +73,8 @@ public class HeroScript : MonoBehaviour
         // Update UI
         Text score = GameObject.Find("UIHeroScore").GetComponent<Text>();
         score.text = GetScore().ToString();
+        Text heroHealthUI = GameObject.Find("UIHeroHealth").GetComponent<Text>();
+        heroHealthUI.text = heroHealth.ToString();
     }
 
     void OnCollisionEnter2D(Collision2D hit)
@@ -105,5 +109,10 @@ public class HeroScript : MonoBehaviour
     {
         GameObject follower = GameObject.Find("HeroFollower");
         return (int)follower.transform.position.x - 9;
+    }
+
+    public int SetFuelCanScore()
+    {
+        return heroCollectionScore++;
     }
 }
