@@ -103,6 +103,7 @@ public class HeroScript : MonoBehaviour
 
     public int GetScore()
     {
-        return (int)transform.position.x;
+        GameObject follower = GameObject.Find("HeroFollower");
+        return (int)follower.transform.position.x - 9;
     }
 }
