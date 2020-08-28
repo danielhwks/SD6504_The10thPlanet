@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour
         if (name == "Hero")
         {
             // Deal damage
+            Debug.Log("Has Hero true");
             hero.ReduceHealth(damage);
         }
         else if (name == "FuelCan" || name == "Trigger")
