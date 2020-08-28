@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public HeroScript hero;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour
         if (name == "Hero")
         {
             // Deal damage
+            hero.ReduceHealth(damage);
         }
         else if (name == "FuelCan" || name == "Trigger")
         {
