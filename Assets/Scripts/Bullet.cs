@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 {
     private HeroScript hero;
     public float damage;
+    public AudioSource heroDamagedSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
         {
             // Deal damage
             Debug.Log("Has Hero true");
+            heroDamagedSound.Play();
             hero.ReduceHealth(damage);
         }
         else if (name == "FuelCan" || name == "Trigger")
