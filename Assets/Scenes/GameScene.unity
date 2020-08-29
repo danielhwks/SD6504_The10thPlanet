@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelCan: {fileID: 471508349}
   hero: {fileID: 1248873322}
-  collectionSound: {fileID: 0}
+  collectionSound: {fileID: 414689501}
 --- !u!95 &471508353
 Animator:
   serializedVersion: 3
@@ -5478,7 +5478,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a9395275186cbd547b93a07751d811f7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
