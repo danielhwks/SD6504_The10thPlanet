@@ -6,6 +6,7 @@ public class FuelCan : MonoBehaviour
 {
     public GameObject fuelCan;
     public HeroScript hero;
+    public AudioSource collectionSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class FuelCan : MonoBehaviour
     {
         if (collision.gameObject.name == "Hero")
         {
+            collectionSound.Play();
             fuelCan.SetActive(false);
             hero.ImproveHealth(10f);
             hero.SetFuelCanScore();

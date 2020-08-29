@@ -17,6 +17,7 @@ public class HeroScript : MonoBehaviour
     private float scale;
     public static float heroHealth;
     public static int heroCollectionScore;
+    public AudioSource jumpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class HeroScript : MonoBehaviour
             anim.Play("HeroJumping");
             if (onGround == true)
             {
+                jumpSound.Play();
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 onGround = false;

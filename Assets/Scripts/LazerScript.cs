@@ -5,6 +5,7 @@ using UnityEngine;
 public class LazerScript : MonoBehaviour
 {
     public HeroScript hero;
+    public AudioSource heroInjuredSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class LazerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        heroInjuredSound.Play();
         hero.ReduceHealth(10);
     }
 

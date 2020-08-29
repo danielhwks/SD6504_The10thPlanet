@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletSpawn;
     public GameObject bulletPrefab;
     public float bulletSpeed;
+    public AudioSource gunShotSound;
 
     private GameObject bullet;
 
@@ -25,6 +26,7 @@ public class Gun : MonoBehaviour
 
     void Fire()
     {
+        gunShotSound.Play();
         bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawn.transform.position - transform.position) * bulletSpeed;
     }
