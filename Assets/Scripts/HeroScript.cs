@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -120,6 +120,7 @@ public class HeroScript : MonoBehaviour
     public void ReduceHealth(float healthRemove)
     {
         heroHealth -= healthRemove;
+        StartCoroutine(Blink());
         if(heroHealth < 0f)
         {
             heroHealth = 0f;
@@ -138,4 +139,12 @@ public class HeroScript : MonoBehaviour
     {
         return heroCollectionScore++;
     }
+
+    private IEnumerator Blink()
+    {
+        GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<Renderer>().material.color = Color.white;
+    }
+
 }
