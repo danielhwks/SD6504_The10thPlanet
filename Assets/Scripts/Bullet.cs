@@ -31,6 +31,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("Has Hero true");
             heroDamagedSound.Play();
             hero.ReduceHealth(damage);
+            TempDestroy();
         }
         else if (name == "FuelCan" || name == "Trigger")
         {
