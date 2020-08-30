@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,9 @@ public class HeroScript : MonoBehaviour
     public static float heroHealth;
     public static int heroCollectionScore;
     public AudioSource jumpSound;
+    GameObject pausedPanel;
+    private bool paused;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,9 @@ public class HeroScript : MonoBehaviour
         rb.freezeRotation = true;
         heroHealth = 100f;
         heroCollectionScore = 0;
+        pausedPanel = GameObject.Find("PausedPanel");
+        paused = false;
+
     }
 
     // Update is called once per frame
@@ -41,6 +48,20 @@ public class HeroScript : MonoBehaviour
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 onGround = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("p"))
+        {           
+            paused = !paused;
+            if (paused)
+            {
+                pausedPanel.transform.localScale = new Vector3(1, 1, 1);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                pausedPanel.transform.localScale = new Vector3(0, 0, 0);
+                Time.timeScale = 1;
             }
         }
     }
