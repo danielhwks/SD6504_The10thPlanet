@@ -6,11 +6,10 @@ public class Gun : MonoBehaviour
 {
     public GameObject hero;
     public GameObject bulletSpawn;
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
+    public GameObject bullet;
     public float bulletSpeed;
     public AudioSource gunShotSound;
-
-    private GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +26,9 @@ public class Gun : MonoBehaviour
     void Fire()
     {
         gunShotSound.Play();
-        bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
+        //bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
+        bullet.transform.position = bulletSpawn.transform.position;
+        bullet.transform.rotation = transform.rotation;
         bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawn.transform.position - transform.position) * bulletSpeed;
     }
 }

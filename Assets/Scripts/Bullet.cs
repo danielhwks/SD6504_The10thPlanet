@@ -41,7 +41,13 @@ public class Bullet : MonoBehaviour
         {
             // Floor, Grate, Guns
             // Destroy self
-            Destroy(this.gameObject);
+            TempDestroy();
         }
+    }
+
+    private void TempDestroy()
+    {
+        transform.position = new Vector2(0, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
 }

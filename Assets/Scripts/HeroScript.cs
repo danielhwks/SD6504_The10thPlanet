@@ -121,7 +121,7 @@ public class HeroScript : MonoBehaviour
     {
         heroHealth -= healthRemove;
         StartCoroutine(Blink());
-        if(heroHealth < 0f)
+        if(heroHealth <= 0f)
         {
             heroHealth = 0f;
             anim.Play("HeroFall");
