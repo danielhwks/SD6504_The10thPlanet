@@ -1779,7 +1779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530718386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.41, y: 1.66, z: 0}
+  m_LocalPosition: {x: -10.25, y: 1.66, z: 0}
   m_LocalScale: {x: 1, y: 15.200186, z: 1}
   m_Children: []
   m_Father: {fileID: 47991284}
@@ -1797,11 +1797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22044cfdef04d6142b01fcfdd59008cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabMove: {fileID: 856161758}
+  prefabMove: {fileID: 2042262895}
   currentPrefab: {fileID: 47991281}
   incrementX: 25.61
-  fuelCan: {fileID: 471508349}
-  laser: {fileID: 2089083816}
+  fuelCan: {fileID: 1248806450}
+  laser: {fileID: 199259895}
 --- !u!61 &530718389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2071,6 +2071,103 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.965208, y: 2.5483475}
   m_EdgeRadius: 0
+--- !u!1 &608852062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608852063}
+  - component: {fileID: 608852066}
+  - component: {fileID: 608852065}
+  - component: {fileID: 608852064}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608852063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608852062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.2, y: 1.6600182, z: 0}
+  m_LocalScale: {x: 1, y: 15.20019, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042262896}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &608852064
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608852062}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &608852065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608852062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22044cfdef04d6142b01fcfdd59008cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabMove: {fileID: 856161758}
+  currentPrefab: {fileID: 2042262895}
+  incrementX: 25.61
+  fuelCan: {fileID: 471508349}
+  laser: {fileID: 629305246}
+--- !u!61 &608852066
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608852062}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.037616096}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5347555}
+  m_EdgeRadius: 0
 --- !u!1 &615936018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,7 +2195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615936018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.13, y: 1.66, z: 0}
+  m_LocalPosition: {x: -6.65, y: 1.66, z: 0}
   m_LocalScale: {x: 1, y: 15.200186, z: 1}
   m_Children: []
   m_Father: {fileID: 856161760}
@@ -2146,7 +2243,7 @@ MonoBehaviour:
   currentPrefab: {fileID: 856161758}
   incrementX: 25.61
   fuelCan: {fileID: 129227692}
-  laser: {fileID: 629305246}
+  laser: {fileID: 2089083816}
 --- !u!50 &615936022
 Rigidbody2D:
   serializedVersion: 4
@@ -5571,6 +5668,7 @@ Transform:
   - {fileID: 597301983}
   - {fileID: 478539087}
   - {fileID: 341610646}
+  - {fileID: 608852063}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
