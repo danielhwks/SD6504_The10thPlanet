@@ -19,7 +19,7 @@ public class HeroScript : MonoBehaviour
     public static float heroHealth;
     public int heroCollectionScore;
     public int heroLife;
-    public AudioSource jumpSound;
+    public AudioSource jumpSound, deathSound;
     GameObject pausedPanel;
     private bool paused;
 
@@ -148,21 +148,23 @@ public class HeroScript : MonoBehaviour
         return heroCollectionScore++;
     }
 
-    private IEnumerator Blink()
-    {
-        GetComponent<Renderer>().material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        GetComponent<Renderer>().material.color = Color.white;
-    }
+
     private void ReduceLife()
     {
+        deathSound.Play();
         heroLife = heroLife - 1;
         if (heroLife < 0)
         {
             print("All Lives Over....");
         }
         heroHealth = 100f;
+    }
 
+    private IEnumerator Blink()
+    {
+        GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<Renderer>().material.color = Color.white;
     }
 
 }
