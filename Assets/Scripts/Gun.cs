@@ -25,10 +25,14 @@ public class Gun : MonoBehaviour
 
     void Fire()
     {
-        gunShotSound.Play();
-        //bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
-        bullet.transform.position = bulletSpawn.transform.position;
-        bullet.transform.rotation = transform.rotation;
-        bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawn.transform.position - transform.position) * bulletSpeed;
+        float distance = Vector2.Distance(hero.transform.position, transform.position);
+        if (distance < 20)
+        {
+            gunShotSound.Play();
+            //bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
+            bullet.transform.position = bulletSpawn.transform.position;
+            bullet.transform.rotation = transform.rotation;
+            bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawn.transform.position - transform.position) * bulletSpeed;
+        }
     }
 }
