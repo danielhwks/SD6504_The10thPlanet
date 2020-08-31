@@ -113,7 +113,6 @@ public class HeroScript : MonoBehaviour
     public void ImproveHealth(float healthAdd)
     {
         heroHealth += healthAdd;
-        heroCollectionScore = heroCollectionScore + 1;
         if(heroHealth > 100f)
         {
             heroHealth = 100f;

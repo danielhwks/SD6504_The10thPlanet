@@ -22,7 +22,7 @@ public class LazerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         heroInjuredSound.Play();
-        hero.ReduceHealth(10);
+        hero.ReduceHealth(12);
     }
 
 }
