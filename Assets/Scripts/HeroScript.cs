@@ -18,6 +18,7 @@ public class HeroScript : MonoBehaviour
     private float scale;
     public static float heroHealth;
     public int heroCollectionScore;
+    public int heroLife;
     public AudioSource jumpSound;
     GameObject pausedPanel;
     private bool paused;
@@ -30,6 +31,7 @@ public class HeroScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         heroHealth = 100f;
+        heroLife = 2;
         heroCollectionScore = 0;
         pausedPanel = GameObject.Find("PausedPanel");
         paused = false;
@@ -98,6 +100,7 @@ public class HeroScript : MonoBehaviour
         distanceScore.text = GetScore().ToString();
         Text collectionScore = GameObject.Find("UICanScore").GetComponent<Text>();
         collectionScore.text = heroCollectionScore.ToString();
+        GameObject.Find("UIHeroLivesText").GetComponent<Text>().text = heroLife.ToString();
     }
 
     void OnCollisionEnter2D(Collision2D hit)
@@ -129,7 +132,7 @@ public class HeroScript : MonoBehaviour
         StartCoroutine(Blink());
         if(heroHealth <= 0f)
         {
-            heroHealth = 0f;
+            ReduceLife();
             anim.Play("HeroFall");
         }
         print("Hero Health: " + heroHealth);
@@ -151,6 +154,16 @@ public class HeroScript : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         GetComponent<Renderer>().material.color = Color.white;
+    }
+    private void ReduceLife()
+    {
+        heroLife = heroLife - 1;
+        if (heroLife < 0)
+        {
+            print("All Lives Over....");
+        }
+        heroHealth = 100f;
+
     }
 
 }
