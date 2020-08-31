@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class HeroScript : MonoBehaviour
@@ -20,8 +21,9 @@ public class HeroScript : MonoBehaviour
     public int heroCollectionScore;
     public int heroLife;
     public AudioSource jumpSound, deathSound, gameOver;
-    GameObject pausedPanel;
+    GameObject pausedPanel, gameOverPanel;
     private bool paused;
+    public Button QuitBtn;
 
 
     // Start is called before the first frame update
@@ -34,7 +36,15 @@ public class HeroScript : MonoBehaviour
         heroLife = 2;
         heroCollectionScore = 0;
         pausedPanel = GameObject.Find("PausedPanel");
+        gameOverPanel = GameObject.Find("EndGamePanel");
+        pausedPanel.transform.localScale = new Vector3(0, 0, 0);
         paused = false;
+        Time.timeScale = 1;
+
+        QuitBtn.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("HomeScene");
+        });
 
     }
 
@@ -157,7 +167,8 @@ public class HeroScript : MonoBehaviour
         {
             print("All Lives Over....");
             gameOver.Play();
-            Time.timeScale = 0;
+            GameOver();
+            
         }
         else
         { 
@@ -181,6 +192,17 @@ public class HeroScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GetComponent<Renderer>().material.color = Color.white;
         anim.SetInteger("Trans", 0);
+    }
+
+    private void GameOver()
+    {
+
+        Text endDistanceScore = GameObject.Find("DistanceCoveredScore").GetComponent<Text>();
+        Text endCanCollectedScore = GameObject.Find("CanCollectedScore").GetComponent<Text>();
+        endDistanceScore.text = GetScore().ToString();
+        endCanCollectedScore.text = heroCollectionScore.ToString();
+        gameOverPanel.transform.localScale = new Vector3(1, 1, 1);
+        Time.timeScale = 0;
     }
 
 }

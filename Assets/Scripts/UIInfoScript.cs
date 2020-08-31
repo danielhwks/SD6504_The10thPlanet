@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIInfoScript : MonoBehaviour
 {
@@ -20,5 +21,6 @@ public class UIInfoScript : MonoBehaviour
         Vector3 topLeftPos = new Vector3(-cameraHalfWidth, cameraHalfHeight, 0) + Camera.main.transform.position;
         topLeftPos += new Vector3(bounds.size.x / 2, -bounds.size.y / 2, 1);
         transform.position = topLeftPos;
+
     }
 }
