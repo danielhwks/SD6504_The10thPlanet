@@ -3509,7 +3509,7 @@ Animator:
   m_GameObject: {fileID: 921418772}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f87bd79331551c04c8bb0635bb21e08b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5200,6 +5200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 1248873316}
   heroFollower: {fileID: 519420028}
+  gun: {fileID: 921418772}
   bulletSpawn: {fileID: 707521180}
   bullet: {fileID: 2902350408717680592}
   bulletSpeed: 3
