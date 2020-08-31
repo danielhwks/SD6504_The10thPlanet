@@ -157,6 +157,7 @@ public class HeroScript : MonoBehaviour
         {
             print("All Lives Over....");
             gameOver.Play();
+            Time.timeScale = 0;
         }
         heroHealth = 100f;
     }
