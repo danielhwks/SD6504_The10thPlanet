@@ -131,8 +131,8 @@ public class HeroScript : MonoBehaviour
         StartCoroutine(Blink());
         if(heroHealth <= 0f)
         {
-            ReduceLife();
             anim.Play("HeroFall");
+            ReduceLife();
         }
         print("Hero Health: " + heroHealth);
     }
@@ -159,7 +159,11 @@ public class HeroScript : MonoBehaviour
             gameOver.Play();
             Time.timeScale = 0;
         }
-        heroHealth = 100f;
+        else
+        { 
+            StartCoroutine(Revive());
+            heroHealth = 100f;
+        }
     }
 
     private IEnumerator Blink()
@@ -167,6 +171,16 @@ public class HeroScript : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    private IEnumerator Revive()
+    {
+        GetComponent<Renderer>().material.color = Color.blue;
+        yield return new WaitForSeconds(2f);
+        anim.SetInteger("Trans", 5);        
+        yield return new WaitForSeconds(1f);
+        GetComponent<Renderer>().material.color = Color.white;
+        anim.SetInteger("Trans", 0);
     }
 
 }
