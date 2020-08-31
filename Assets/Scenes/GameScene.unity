@@ -1824,7 +1824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 2.37, z: -9.551108}
+  m_LocalPosition: {x: 0, y: 2.37, z: -9.551108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238659936}
@@ -3427,6 +3427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 921418773}
   - component: {fileID: 921418774}
+  - component: {fileID: 921418775}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -3498,6 +3499,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &921418775
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921418772}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &994104779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5179,6 +5199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 1248873316}
+  heroFollower: {fileID: 519420028}
   bulletSpawn: {fileID: 707521180}
   bullet: {fileID: 2902350408717680592}
   bulletSpeed: 3

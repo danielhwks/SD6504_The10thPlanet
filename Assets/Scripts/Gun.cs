@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GameObject hero;
+    public GameObject heroFollower;
     public GameObject bulletSpawn;
     //public GameObject bulletPrefab;
     public GameObject bullet;
@@ -25,8 +26,9 @@ public class Gun : MonoBehaviour
 
     void Fire()
     {
-        float distance = Vector2.Distance(hero.transform.position, transform.position);
-        if (distance < 20)
+        float screenHalfWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
+        float distance = Vector2.Distance(heroFollower.transform.position * new Vector2(1, 0), transform.position * new Vector2(1, 0));
+        if (distance < screenHalfWidth)
         {
             gunShotSound.Play();
             //bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
