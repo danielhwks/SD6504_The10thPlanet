@@ -19,7 +19,7 @@ public class HeroScript : MonoBehaviour
     public static float heroHealth;
     public int heroCollectionScore;
     public int heroLife;
-    public AudioSource jumpSound, deathSound;
+    public AudioSource jumpSound, deathSound, gameOver;
     GameObject pausedPanel;
     private bool paused;
 
@@ -156,6 +156,7 @@ public class HeroScript : MonoBehaviour
         if (heroLife < 0)
         {
             print("All Lives Over....");
+            gameOver.Play();
         }
         heroHealth = 100f;
     }
