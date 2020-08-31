@@ -17,7 +17,7 @@ public class HeroScript : MonoBehaviour
     private Rigidbody2D rb;
     private float scale;
     public static float heroHealth;
-    public static int heroCollectionScore;
+    public int heroCollectionScore;
     public AudioSource jumpSound;
     GameObject pausedPanel;
     private bool paused;
@@ -94,10 +94,10 @@ public class HeroScript : MonoBehaviour
         }
 
         // Update UI
-        Text score = GameObject.Find("UIHeroScore").GetComponent<Text>();
-        score.text = GetScore().ToString();
-        Text heroHealthUI = GameObject.Find("UIHeroHealth").GetComponent<Text>();
-        heroHealthUI.text = heroHealth.ToString();
+        Text distanceScore = GameObject.Find("UIDistanceScore").GetComponent<Text>();
+        distanceScore.text = GetScore().ToString();
+        Text collectionScore = GameObject.Find("UICanScore").GetComponent<Text>();
+        collectionScore.text = heroCollectionScore.ToString();
     }
 
     void OnCollisionEnter2D(Collision2D hit)
@@ -110,6 +110,7 @@ public class HeroScript : MonoBehaviour
     public void ImproveHealth(float healthAdd)
     {
         heroHealth += healthAdd;
+        heroCollectionScore = heroCollectionScore + 1;
         if(heroHealth > 100f)
         {
             heroHealth = 100f;
