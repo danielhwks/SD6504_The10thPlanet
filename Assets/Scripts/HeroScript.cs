@@ -117,6 +117,11 @@ public class HeroScript : MonoBehaviour
         print("Hero Health: " + heroHealth);
     }
 
+    public float GetHealth()
+    {
+        return heroHealth;
+    }
+
     public void ReduceHealth(float healthRemove)
     {
         heroHealth -= healthRemove;

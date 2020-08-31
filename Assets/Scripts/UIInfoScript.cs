@@ -8,7 +8,7 @@ public class UIInfoScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     //The positioning on the UI Script must be in FixedUpdate to avoid jittering effect when the camera moves.
