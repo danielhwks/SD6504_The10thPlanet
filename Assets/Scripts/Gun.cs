@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         anim = gun.GetComponent<Animator>();
-        InvokeRepeating("CheckFire", 4f, 4f);
+        InvokeRepeating("CheckFire", 4f, 5f);
     }
 
     // Update is called once per frame
@@ -39,13 +39,16 @@ public class Gun : MonoBehaviour
 
     IEnumerator Fire()
     {
-        anim.Play("GunCharging");
-        yield return new WaitForSeconds(0.5f);
-        anim.Play("GunFiringAnimation");
+        anim.SetInteger("FiringSequence", 1);
+        yield return new WaitForSeconds(1f);
+        anim.SetInteger("FiringSequence", 2);
+        yield return new WaitForSeconds(2f);
         gunShotSound.Play();
         //bullet = Instantiate(bulletPrefab, bulletSpawn.transform.position, transform.rotation);
         bullet.transform.position = bulletSpawn.transform.position;
         bullet.transform.rotation = transform.rotation;
         bullet.GetComponent<Rigidbody2D>().velocity = (bulletSpawn.transform.position - transform.position) * bulletSpeed;
+        yield return new WaitForSeconds(0.5f);
+        anim.SetInteger("FiringSequence", 0);
     }
 }
