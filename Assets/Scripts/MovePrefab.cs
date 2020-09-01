@@ -41,7 +41,7 @@ public class MovePrefab : MonoBehaviour
                 specialCounter = 2;
                 selectedPrefab = specialPrefab;
                 specialKey.SetActive(true);
-                specialWall.SetActive(true);
+                specialWall.GetComponent<LazerWall>().ShowWall();
             }
             else
             {

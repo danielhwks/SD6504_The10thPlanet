@@ -12,7 +12,7 @@ public class Key : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-       lazerWall.SetActive(false);
+       lazerWall.GetComponent<LazerWall>().HideWall();
        this.gameObject.SetActive(false); 
     }
 }
