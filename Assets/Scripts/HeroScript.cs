@@ -24,7 +24,8 @@ public class HeroScript : MonoBehaviour
     GameObject pausedPanel, gameOverPanel;
     private bool paused;
     public Button QuitBtn;
-
+    public Joystick joystick;
+    float joystickHorizontalMove = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +52,7 @@ public class HeroScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") || (joystick.Vertical >= 0.5f))
         {
             anim.Play("HeroJumping");
             if (onGround == true)
@@ -63,7 +64,7 @@ public class HeroScript : MonoBehaviour
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("p"))
-        {           
+        {
             paused = !paused;
             if (paused)
             {
@@ -81,7 +82,9 @@ public class HeroScript : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
-        if (Input.GetKey("left"))
+        joystickHorizontalMove = joystick.Horizontal;
+
+        if (Input.GetKey("left") || (joystickHorizontalMove <= -0.2f))
         {
             anim.SetInteger("Trans", 2);
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
@@ -89,7 +92,7 @@ public class HeroScript : MonoBehaviour
             scale.x = -1f;
             GetComponent<Transform>().localScale = scale;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || (joystickHorizontalMove >= 0.2f))
         {
             anim.SetInteger("Trans", 2);
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
@@ -104,6 +107,7 @@ public class HeroScript : MonoBehaviour
         {
             anim.SetInteger("Trans", 1);
         }
+        joystickHorizontalMove = 0f;
 
         // Update UI
         Text distanceScore = GameObject.Find("UIDistanceScore").GetComponent<Text>();
