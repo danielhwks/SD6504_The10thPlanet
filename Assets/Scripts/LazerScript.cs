@@ -19,10 +19,13 @@ public class LazerScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        heroInjuredSound.Play();
-        hero.ReduceHealth(12);
+        if (collider.gameObject.name == "Hero")
+        {
+            heroInjuredSound.Play();
+            hero.ReduceHealth(12);
+        }
     }
 
 }
