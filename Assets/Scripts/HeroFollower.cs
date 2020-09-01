@@ -13,7 +13,9 @@ public class HeroFollower : MonoBehaviour
         float edge = 12.36f;
         float offset = screenHalfWidth - edge;
         GameObject camera = GameObject.Find("Main Camera");
+        GameObject blocker = GameObject.Find("Blocker");
         camera.transform.localPosition = new Vector3(offset, camera.transform.localPosition.y, camera.transform.localPosition.z);
+        blocker.transform.localPosition = new Vector3(-(edge+1), camera.transform.localPosition.y, camera.transform.localPosition.z);
     }
 
     // Update is called once per frame
