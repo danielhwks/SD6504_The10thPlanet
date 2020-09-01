@@ -2233,6 +2233,8 @@ MonoBehaviour:
   fuelCan: {fileID: 1248806450}
   laser: {fileID: 199259895}
   specialPrefab: {fileID: 0}
+  specialKey: {fileID: 0}
+  specialWall: {fileID: 0}
 --- !u!61 &523170760
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2310,6 +2312,8 @@ MonoBehaviour:
   fuelCan: {fileID: 1248806450}
   laser: {fileID: 199259895}
   specialPrefab: {fileID: 956264583}
+  specialKey: {fileID: 599530875}
+  specialWall: {fileID: 870800965}
 --- !u!61 &530718389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3035,6 +3039,8 @@ MonoBehaviour:
   fuelCan: {fileID: 471508349}
   laser: {fileID: 1446130021}
   specialPrefab: {fileID: 0}
+  specialKey: {fileID: 0}
+  specialWall: {fileID: 0}
 --- !u!61 &608852066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3138,6 +3144,8 @@ MonoBehaviour:
   fuelCan: {fileID: 129227692}
   laser: {fileID: 631811448}
   specialPrefab: {fileID: 0}
+  specialKey: {fileID: 0}
+  specialWall: {fileID: 0}
 --- !u!50 &615936022
 Rigidbody2D:
   serializedVersion: 4

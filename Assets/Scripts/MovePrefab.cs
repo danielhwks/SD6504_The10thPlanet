@@ -11,6 +11,8 @@ public class MovePrefab : MonoBehaviour
     public GameObject fuelCan;
     public GameObject laser;
     public GameObject specialPrefab;
+    public GameObject specialKey;
+    public GameObject specialWall;
     private int specialCounter;
 
     // Start is called before the first frame update
@@ -38,6 +40,8 @@ public class MovePrefab : MonoBehaviour
             {
                 specialCounter = 2;
                 selectedPrefab = specialPrefab;
+                specialKey.SetActive(true);
+                specialWall.SetActive(true);
             }
             else
             {
