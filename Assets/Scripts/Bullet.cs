@@ -23,12 +23,10 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Triggered");
         string name = collider.gameObject.name;
         if (name == "Hero")
         {
             // Deal damage
-            Debug.Log("Has Hero true");
             heroDamagedSound.Play();
             hero.ReduceHealth(damage);
             TempDestroy();

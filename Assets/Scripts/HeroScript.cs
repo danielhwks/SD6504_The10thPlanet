@@ -121,7 +121,6 @@ public class HeroScript : MonoBehaviour
     {
         onGround = true;
         rb.velocity = new Vector2(movementSpeed, 0);
-        print("Hero grounded");
     }
 
     public void ImproveHealth(float healthAdd)
@@ -131,7 +130,6 @@ public class HeroScript : MonoBehaviour
         {
             heroHealth = 100f;
         }
-        print("Hero Health: " + heroHealth);
     }
 
     public float GetHealth()
@@ -148,7 +146,6 @@ public class HeroScript : MonoBehaviour
             anim.Play("HeroFall");
             ReduceLife();
         }
-        print("Hero Health: " + heroHealth);
     }
 
     public int GetScore()
@@ -169,7 +166,6 @@ public class HeroScript : MonoBehaviour
         heroLife = heroLife - 1;
         if (heroLife < 0)
         {
-            print("All Lives Over....");
             gameOver.Play();
             GameOver();
             
