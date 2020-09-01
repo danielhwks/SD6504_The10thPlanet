@@ -10,12 +10,15 @@ public class MovePrefab : MonoBehaviour
     public float incrementX;
     public GameObject fuelCan;
     public GameObject laser;
-
+    public GameObject specialPrefab;
+    private int specialCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (specialPrefab) {
+            specialCounter = 2;
+        }
     }
 
     // Update is called once per frame
@@ -27,11 +30,24 @@ public class MovePrefab : MonoBehaviour
     {
         if (collider.gameObject.name != "Hero")
             return;
+
+        GameObject selectedPrefab = prefabMove;
+        
+        if (specialPrefab) {
+            if (specialCounter == 0)
+            {
+                specialCounter = 2;
+                selectedPrefab = specialPrefab;
+            }
+            else
+            {
+                specialCounter -= 1;
+            }
+        }
+
         Vector3 temp = currentPrefab.transform.position;
         temp.x = temp.x + incrementX;
-        //Vector3 temp = prefabMove.transform.position;
-        //temp.x = temp.x + incrementX;
-        prefabMove.transform.position = temp;
+        selectedPrefab.transform.position = temp;
 
         Random random = new Random();
         int choice = Random.Range(0, 2);
