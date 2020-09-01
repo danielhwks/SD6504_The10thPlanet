@@ -43,7 +43,6 @@ public class LazerWall : MonoBehaviour
         lazerWall6.SetActive(false);
         this.gameObject.SetActive(false);
     }
-
     public void HideWall()
     {
         StartCoroutine(HideCoroutine());
