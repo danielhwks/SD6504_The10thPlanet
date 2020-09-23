@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,11 @@ public class Key : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        keyCollectedSound.Play();
-       lazerWall.GetComponent<LazerWall>().HideWall();
-       this.gameObject.SetActive(false); 
+        if (collider.gameObject.name == "Hero")
+        {
+            keyCollectedSound.Play();
+            lazerWall.GetComponent<LazerWall>().HideWall();
+            this.gameObject.SetActive(false);
+        }
     }
 }

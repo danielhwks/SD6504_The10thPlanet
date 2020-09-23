@@ -11,6 +11,8 @@ public class LazerWall : MonoBehaviour
     public GameObject lazerWall4;
     public GameObject lazerWall5;
     public GameObject lazerWall6;
+    public AudioSource heroInjuredSound;
+    public HeroScript hero;
 
     void Start()
     {
@@ -46,5 +48,15 @@ public class LazerWall : MonoBehaviour
     public void HideWall()
     {
         StartCoroutine(HideCoroutine());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "Hero")
+        {
+            print("Collided with Hero");
+            heroInjuredSound.Play();
+            hero.ReduceHealth(12);
+        }
     }
 }

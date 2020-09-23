@@ -68,13 +68,13 @@ public class HeroScript : MonoBehaviour
             paused = !paused;
             if (paused)
             {
-                pausedPanel.transform.localScale = new Vector3(1, 1, 1);
+                //pausedPanel.transform.localScale = new Vector3(1, 1, 1);
                 Time.timeScale = 0;
             }
             else
             {
-                pausedPanel.transform.localScale = new Vector3(0, 0, 0);
-                Time.timeScale = 1;
+                //pausedPanel.transform.localScale = new Vector3(0, 0, 0);
+                Time.timeScale = 0.5f;
             }
         }
     }

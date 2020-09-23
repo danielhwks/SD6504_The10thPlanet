@@ -4392,7 +4392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 1248873322}
-  heroInjuredSound: {fileID: 0}
+  heroInjuredSound: {fileID: 1436823230}
 --- !u!61 &870800968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4406,7 +4406,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13844872, y: 0.66707397}
+  m_Offset: {x: -0.087566376, y: 1.0780988}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4417,7 +4417,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3203392, y: 5.1031346}
+  m_Size: {x: 0.69018173, y: 8.966765}
   m_EdgeRadius: 0
 --- !u!114 &870800969
 MonoBehaviour:
@@ -4438,6 +4438,8 @@ MonoBehaviour:
   lazerWall4: {fileID: 1499768664}
   lazerWall5: {fileID: 907647688}
   lazerWall6: {fileID: 260100282}
+  heroInjuredSound: {fileID: 1436823230}
+  hero: {fileID: 1248873322}
 --- !u!1 &907647688
 GameObject:
   m_ObjectHideFlags: 0
