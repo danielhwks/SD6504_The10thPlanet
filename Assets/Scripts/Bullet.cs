@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
 
     private void TempDestroy()
     {
-        transform.position = new Vector2(-10, 0);
+        transform.position = new Vector2(-20, 0);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
 }
