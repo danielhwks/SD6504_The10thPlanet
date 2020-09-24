@@ -56,7 +56,7 @@ public class LazerWall : MonoBehaviour
         {
             print("Collided with Hero");
             heroInjuredSound.Play();
-            hero.ReduceHealth(12);
+            hero.ReduceHealth(15);
         }
     }
 }
